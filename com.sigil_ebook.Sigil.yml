@@ -37,7 +37,7 @@ build-options:
       --enable QtWidgets
       --enable QtSvg
       --enable QtWebChannel
-      --enable QtPrintSupport  # WebChannel,PrintSupport required by pyqtwebengine
+      --enable QtPrintSupport
 modules:
   - pyqt5/pyqt5.yml
   - pyqt5/pyqtwebengine.yml
