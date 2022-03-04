@@ -50,6 +50,7 @@
     <url type="help">https://github.com/Sigil-Ebook/Sigil/wiki</url>
 
     <releases>
+        <release version="1.9.1" date="2022-03-04"/>
         <release version="1.9.0" date="2022-02-24"/>
         <release version="1.8.0" date="2022-02-02"/>
         <release version="0.9.18" date="2019-09-04"/>
