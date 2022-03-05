@@ -53,8 +53,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/Sigil-Ebook/Sigil.git
-        tag: 1.9.0
-        commit: de9d0585203a7a0bb66aa27f52de5d0ea784238a
+        tag: 1.9.1
+        commit: c529134c5b38f493e07b8557b2692a3262cc8081
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
