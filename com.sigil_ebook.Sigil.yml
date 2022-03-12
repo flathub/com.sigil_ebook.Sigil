@@ -56,6 +56,7 @@ modules:
         sha256: d1a16f33fe93cda88442c798e0c53f700fa8e2ef792dd78566392d7ad11d997f
         x-checker-data:
           type: json
+          is-main-source: true
           url: https://api.github.com/repos/Sigil-Ebook/Sigil/releases/latest
           version-query: .tag_name
           url-query: '"https://github.com/Sigil-Ebook/Sigil/archive/" + $version +
