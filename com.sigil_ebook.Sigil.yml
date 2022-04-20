@@ -2,7 +2,7 @@ app-id: com.sigil_ebook.Sigil
 runtime: org.kde.Platform
 runtime-version: 5.15-21.08
 sdk: org.kde.Sdk
-base: io.qt.qtwebengine.BaseApp
+base: com.riverbankcomputing.PyQt.BaseApp
 base-version: 5.15-21.08
 rename-desktop-file: sigil.desktop
 rename-icon: sigil
@@ -20,28 +20,10 @@ finish-args:
 
 cleanup-commands:
   - ${FLATPAK_DEST}/cleanup-BaseApp.sh
-  - rm -r ${FLATPAK_DEST}/lib/*/site-packages/PyQt5/bindings
   - ls -d -1 ${FLATPAK_DEST}/translations/qtwebengine_locales/* | grep -v en-US |
     xargs rm
 
-# only global build-options can pass env to modules
-# so put the opts here
-build-options:
-  env:
-    pyqt5_opts: >-
-      --no-designer-plugin
-      --no-qml-plugin
-      --enable QtCore
-      --enable QtGui
-      --enable QtNetwork
-      --enable QtWidgets
-      --enable QtSvg
-      --enable QtWebChannel
-      --enable QtPrintSupport
 modules:
-  - pyqt5/pyqt5.yml
-  - pyqt5/pyqtwebengine.yml
-
   - name: sigil
     buildsystem: cmake-ninja
     config-opts:
