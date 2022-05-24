@@ -43,6 +43,7 @@ modules:
           version-query: .tag_name
           url-query: '"https://github.com/Sigil-Ebook/Sigil/archive/" + $version +
             ".tar.gz"'
+          timestamp-query: .published_at
 
       - type: file
         path: com.sigil_ebook.Sigil.metainfo.xml
