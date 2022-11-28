@@ -17,6 +17,13 @@ finish-args:
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.kde.StatusNotifierWatcher
   - --env=QTWEBENGINEPROCESS_PATH=/app/bin/QtWebEngineProcess
+  - --env=PATH=/app/jre/bin:/usr/bin:/app/bin
+
+add-extensions:
+  org.freedesktop.Sdk.Extension.openjdk17:
+    version: '22.08'
+    directory: jdk # this is relative to /app
+    no-autodownload: true
 
 cleanup-commands:
   - ${FLATPAK_DEST}/cleanup-BaseApp.sh
@@ -24,6 +31,12 @@ cleanup-commands:
     xargs rm
 
 modules:
+  - name: jre
+    buildsystem: simple
+    build-commands:
+      - mkdir -p /app/jdk
+      - ln -s jdk/jvm/openjdk-17 /app/jre
+
   - name: sigil
     buildsystem: cmake-ninja
     config-opts:
