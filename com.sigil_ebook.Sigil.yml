@@ -57,6 +57,10 @@ modules:
           url-query: '"https://github.com/Sigil-Ebook/Sigil/archive/" + $version +
             ".tar.gz"'
           timestamp-query: .published_at
+          
+      - type: shell
+        commands:
+          - sed -i "s/sigil.desktop/$FLATPAK_ID.desktop/g" src/main.cpp
 
       - type: file
         path: com.sigil_ebook.Sigil.metainfo.xml
