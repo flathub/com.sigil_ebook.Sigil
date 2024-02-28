@@ -47,8 +47,8 @@ modules:
       - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo
     sources:
       - type: archive
-        url: https://github.com/Sigil-Ebook/Sigil/archive/2.0.1.tar.gz
-        sha256: af6da67d939276fb6d8dff4da2926d265565fab58d870f66b3b2e8b3125bd0a8
+        url: https://github.com/Sigil-Ebook/Sigil/archive/2.0.2.tar.gz
+        sha256: d5eaf300dc8307ca0765f9d32d9136e143ca7bcf9e65049499512fdea588e285
         x-checker-data:
           type: json
           is-main-source: true
