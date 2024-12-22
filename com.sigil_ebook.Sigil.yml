@@ -1,9 +1,9 @@
 app-id: com.sigil_ebook.Sigil
 runtime: org.kde.Platform
-runtime-version: 5.15-23.08
+runtime-version: '6.8'
 sdk: org.kde.Sdk
 base: com.riverbankcomputing.PyQt.BaseApp
-base-version: 5.15-23.08
+base-version: '6.8'
 rename-desktop-file: sigil.desktop
 rename-icon: sigil
 command: sigil
@@ -21,7 +21,7 @@ finish-args:
 
 add-extensions:
   org.freedesktop.Sdk.Extension.openjdk17:
-    version: '23.08'
+    version: '24.08'
     directory: jdk # this is relative to /app
     no-autodownload: true
 
@@ -40,7 +40,6 @@ modules:
   - name: sigil
     buildsystem: cmake-ninja
     config-opts:
-      - -DUSE_QT5=1
       - -DUSE_SYSTEM_PYTHON=1
       - -DUSE_SYSTEM_LIBS=0
       - -DDISABLE_UPDATE_CHECK=1
@@ -48,20 +47,23 @@ modules:
     post-install:
       - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo
     sources:
-      - type: archive
-        url: https://github.com/Sigil-Ebook/Sigil/archive/2.3.1.tar.gz
-        sha256: 12e84d9a1fc41e60903557ea03801cd0004d8b75dfcebeb44c3a9b1fd8fa97ea
+      - type: git
+        url: https://github.com/Sigil-Ebook/Sigil.git
+        tag: 2.3.1
+        disable-shallow-clone: true
         x-checker-data:
           type: json
           is-main-source: true
           url: https://api.github.com/repos/Sigil-Ebook/Sigil/releases/latest
-          version-query: .tag_name
-          url-query: '"https://github.com/Sigil-Ebook/Sigil/archive/" + $version +
-            ".tar.gz"'
+          tag-query: .tag_name
           timestamp-query: .published_at
 
       - type: shell
         commands:
+          - git config user.email "flatpak@flatpak.com"
+          - git config user.name "flatpak"
+          - git cherry-pick 9b2773e08ba68f3d35c9f58696d8d1b78dd42e26 
+          - git cherry-pick 08ed327cf220eca9c814ea2a65adace24a4cf3d9
           - sed -i "s/sigil.desktop/$FLATPAK_ID.desktop/g" src/main.cpp
 
       - type: file

@@ -4,8 +4,8 @@ build-commands:
   - pip3 install --prefix=${FLATPAK_DEST} .
 sources:
   - type: git
-    url: https://github.com/iwalton3/tkinter-standalone
-    commit: ba946536054f9d27a08aafde21aa18330ce05729
+    url: https://github.com/catsout/tkinter-standalone.git
+    commit: a0efd61bbd3f929b7b406367e56378b371d5f1d6
 modules:
   - name: tcl
     buildsystem: autotools
@@ -30,7 +30,7 @@ modules:
     buildsystem: autotools
     subdir: unix
     post-install:
-      - chmod 755 ${FLATPAK_DEST}/lib/libtk*.so
+      - chmod 755 ${FLATPAK_DEST}/lib/libtcl?tk*.so
     cleanup:
       - /bin
       - /lib/pkgconfig
