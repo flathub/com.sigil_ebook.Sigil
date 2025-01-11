@@ -49,7 +49,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/Sigil-Ebook/Sigil.git
-        tag: 2.3.1
+        tag: 2.4.0
         disable-shallow-clone: true
         x-checker-data:
           type: json
@@ -58,7 +58,7 @@ modules:
           tag-query: .tag_name
           timestamp-query: .published_at
 
-        commit: 313bf21e10cd988731278c61e568ba062fe4f164
+        commit: c569ed2997a726922e70d2ec569deca972da89fe
       - type: shell
         commands:
           - git config user.email "flatpak@flatpak.com"
