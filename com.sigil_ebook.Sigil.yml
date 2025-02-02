@@ -2,7 +2,7 @@ app-id: com.sigil_ebook.Sigil
 runtime: org.kde.Platform
 runtime-version: '6.8'
 sdk: org.kde.Sdk
-base: com.riverbankcomputing.PyQt.BaseApp
+base: io.qt.PySide.BaseApp
 base-version: '6.8'
 rename-desktop-file: sigil.desktop
 rename-icon: sigil
@@ -69,3 +69,9 @@ modules:
     modules:
       - dependencies/sigil-pypi-dependencies.json
       - dependencies/python3-tkinter.yaml
+
+  - name: pip
+    buildsystem: simple
+    build-commands:
+      - cp -av /usr/lib/python3*/site-packages/pip* /app/lib/python3*/site-packages/
+      - cp -a /usr/bin/pip /app/bin/
