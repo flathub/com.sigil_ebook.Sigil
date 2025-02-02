@@ -9,3 +9,8 @@ tk only supports x11
 ```
 flatpak override --socket=x11 --nosocket=fallback-x11 com.sigil_ebook.Sigil
 ```
+
+## Use pip
+```
+flatpak run --command=pip com.sigil_ebook.Sigil install <xxx>
+```
