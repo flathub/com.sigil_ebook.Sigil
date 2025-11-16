@@ -1,9 +1,9 @@
 app-id: com.sigil_ebook.Sigil
 runtime: org.kde.Platform
-runtime-version: '6.10'
+runtime-version: '6.9'
 sdk: org.kde.Sdk
 base: io.qt.PySide.BaseApp
-base-version: '6.10'
+base-version: '6.9'
 rename-desktop-file: sigil.desktop
 rename-icon: sigil
 command: sigil
@@ -21,7 +21,7 @@ finish-args:
 
 add-extensions:
   org.freedesktop.Sdk.Extension.openjdk17:
-    version: '25.08'
+    version: '24.08'
     directory: jdk # this is relative to /app
     no-autodownload: true
 
