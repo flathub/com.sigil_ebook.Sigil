@@ -51,6 +51,9 @@
     <url type="help">https://github.com/Sigil-Ebook/Sigil/wiki</url>
 
     <releases>
+        <release version="2.7.0" date="2025-11-02">
+            <description></description>
+        </release>
         <release version="2.3.1" date="2024-09-06">
             <description></description>
         </release>
