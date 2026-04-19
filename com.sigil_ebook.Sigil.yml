@@ -50,6 +50,7 @@ modules:
       - type: git
         url: https://github.com/Sigil-Ebook/Sigil.git
         tag: 2.7.6
+        commit: 178ce73cb24524e07884c830e7effae420ab0c00
         disable-shallow-clone: true
         x-checker-data:
           type: json
@@ -58,7 +59,6 @@ modules:
           tag-query: .tag_name
           timestamp-query: .published_at
 
-        commit: 178ce73cb24524e07884c830e7effae420ab0c00
       - type: shell
         commands:
           - sed -i "s/sigil.desktop/$FLATPAK_ID.desktop/g" src/main.cpp
