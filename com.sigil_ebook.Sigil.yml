@@ -18,6 +18,11 @@ finish-args:
   - --talk-name=org.kde.StatusNotifierWatcher
   - --env=QTWEBENGINEPROCESS_PATH=/app/bin/QtWebEngineProcess
   - --env=PATH=/app/jre/bin:/usr/bin:/app/bin
+cleanup:
+  - /lib/tk*/demos
+  - /share/man
+  - '*.la'
+  - '*.a'
 
 add-extensions:
   org.freedesktop.Sdk.Extension.openjdk17:
