@@ -10,6 +10,8 @@ modules:
   - name: tcl
     buildsystem: autotools
     subdir: unix
+    config-opts:
+      - --disable-zipfs    
     post-install:
       - chmod 755 ${FLATPAK_DEST}/lib/libtcl*.so
     cleanup:
