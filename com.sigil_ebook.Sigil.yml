@@ -54,8 +54,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/Sigil-Ebook/Sigil.git
-        tag: 2.7.6
-        commit: 178ce73cb24524e07884c830e7effae420ab0c00
+        tag: 2.8.1
+        commit: abfaeabf0aa9c0bf4ffead94a3a52b1056f9cced
         disable-shallow-clone: true
         x-checker-data:
           type: json
